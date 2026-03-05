@@ -79,6 +79,14 @@ rt_err_t button_cob_set_trig_flag(uint16_t button_cob_mask)
         }
     }
 }
+int button_get_id(BUTTON *btn)
+{
+    if(btn == NULL)
+    {
+        return -1;
+    }
+    return btn->id;
+}
 
 //检测每个按键的状态并发送对应事件
 void button_scan(void *p)
